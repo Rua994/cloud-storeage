@@ -1,8 +1,8 @@
 import React from "react";
-import { cn, getFileIcon } from "@/lib/utils";
 import Image from "next/image";
+import { cn, getFileIcon } from "@/lib/utils";
 
-const Thumbnaill = ({
+export const Thumbnail = ({
   type,
   extension,
   url = "",
@@ -10,6 +10,7 @@ const Thumbnaill = ({
   className,
 }) => {
   const isImage = type === "image" && extension !== "svg";
+
   return (
     <figure className={cn("thumbnail", className)}>
       <Image
@@ -20,10 +21,10 @@ const Thumbnaill = ({
         className={cn(
           "size-8 object-contain",
           imageClassName,
-          isImage && "thumbnail-image",
+          isImage && "thumbnail-image"
         )}
       />
     </figure>
   );
 };
-export default Thumbnaill;
+export default Thumbnail;

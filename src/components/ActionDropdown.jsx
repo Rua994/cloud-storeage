@@ -22,13 +22,14 @@ import Link from "next/link";
 import { constructDownloadUrl } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+
+import { usePathname } from "next/navigation";
+import { FileDetails, ShareInput } from "@/components/ActionsModalContent";
 import {
   deleteFile,
   renameFile,
   updateFileUsers,
-} from "@/lib/actions/file.actions";
-import { usePathname } from "next/navigation";
-import { FileDetails, ShareInput } from "@/components/ActionsModalContent";
+} from "@/lib/action/file.action";
 
 const ActionDropdown = ({ file }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
